@@ -1,0 +1,41 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[Category]
+       [dbo].[Chapter]
+       [dbo].[Comment]
+       [dbo].[Discussion]
+       [dbo].[Story]
+       [dbo].[Tag]
+       [dbo].[User]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Drop
+       unnamed constraint on [dbo].[Chapter] (Foreign Key)
+       unnamed constraint on [dbo].[Chapter] (Foreign Key)
+       unnamed constraint on [dbo].[Comment] (Foreign Key)
+       unnamed constraint on [dbo].[Story] (Foreign Key)
+       unnamed constraint on [dbo].[Comment] (Foreign Key)
+       unnamed constraint on [dbo].[Discussion] (Foreign Key)
+     Table rebuild
+       [dbo].[Category] (Table)
+       [dbo].[Chapter] (Table)
+       [dbo].[Comment] (Table)
+       [dbo].[Discussion] (Table)
+       [dbo].[Story] (Table)
+       [dbo].[Tag] (Table)
+       [dbo].[User] (Table)
+
+** Supporting actions
+     Create
+       Foreign Key: unnamed constraint on [dbo].[Chapter] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Chapter] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Comment] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Story] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Comment] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Discussion] (Foreign Key)

@@ -1,0 +1,14 @@
+C:\Dev\TreeNovel\API\LocalModel\bin\Release\netcoreapp3.1\LocalModel.deps.json
+C:\Dev\TreeNovel\API\LocalModel\bin\Release\netcoreapp3.1\LocalModel.dll
+C:\Dev\TreeNovel\API\LocalModel\bin\Release\netcoreapp3.1\LocalModel.pdb
+C:\Dev\TreeNovel\API\LocalModel\bin\Release\netcoreapp3.1\ADOToolbox.dll
+C:\Dev\TreeNovel\API\LocalModel\bin\Release\netcoreapp3.1\DAL.dll
+C:\Dev\TreeNovel\API\LocalModel\bin\Release\netcoreapp3.1\DAL.pdb
+C:\Dev\TreeNovel\API\LocalModel\bin\Release\netcoreapp3.1\ADOToolbox.pdb
+C:\Dev\TreeNovel\API\LocalModel\obj\Release\netcoreapp3.1\LocalModel.csprojAssemblyReference.cache
+C:\Dev\TreeNovel\API\LocalModel\obj\Release\netcoreapp3.1\LocalModel.AssemblyInfoInputs.cache
+C:\Dev\TreeNovel\API\LocalModel\obj\Release\netcoreapp3.1\LocalModel.AssemblyInfo.cs
+C:\Dev\TreeNovel\API\LocalModel\obj\Release\netcoreapp3.1\LocalModel.csproj.CoreCompileInputs.cache
+C:\Dev\TreeNovel\API\LocalModel\obj\Release\netcoreapp3.1\LocalModel.csproj.CopyComplete
+C:\Dev\TreeNovel\API\LocalModel\obj\Release\netcoreapp3.1\LocalModel.dll
+C:\Dev\TreeNovel\API\LocalModel\obj\Release\netcoreapp3.1\LocalModel.pdb

@@ -1,0 +1,9 @@
+C:\Dev\TreeNovel\API\TreeNovelDb\bin\Release\TreeNovelDb.dacpac
+C:\Dev\TreeNovel\API\TreeNovelDb\bin\Release\TreeNovelDb.dll
+C:\Dev\TreeNovel\API\TreeNovelDb\bin\Release\TreeNovelDb.pdb
+C:\Dev\TreeNovel\API\TreeNovelDb\obj\Release\Model.xml
+C:\Dev\TreeNovel\API\TreeNovelDb\obj\Release\refactor.xml
+C:\Dev\TreeNovel\API\TreeNovelDb\obj\Release\postdeploy.sql
+C:\Dev\TreeNovel\API\TreeNovelDb\obj\Release\predeploy.sql
+C:\Dev\TreeNovel\API\TreeNovelDb\obj\Release\TreeNovelDb.dll
+C:\Dev\TreeNovel\API\TreeNovelDb\obj\Release\TreeNovelDb.pdb

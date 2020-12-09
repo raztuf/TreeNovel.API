@@ -1,0 +1,12 @@
+C:\Dev\TreeNovel\TreeNovelDb\bin\Debug\TreeNovelDb.dacpac
+C:\Dev\TreeNovel\TreeNovelDb\bin\Debug\TreeNovelDb.dll
+C:\Dev\TreeNovel\TreeNovelDb\bin\Debug\TreeNovelDb.pdb
+C:\Dev\TreeNovel\TreeNovelDb\obj\Debug\TreeNovelDb.sqlprojAssemblyReference.cache
+C:\Dev\TreeNovel\TreeNovelDb\obj\Debug\TreeNovelDb.dll
+C:\Dev\TreeNovel\TreeNovelDb\obj\Debug\TreeNovelDb.pdb
+C:\Dev\TreeNovel\API\TreeNovelDb\bin\Debug\TreeNovelDb.dacpac
+C:\Dev\TreeNovel\API\TreeNovelDb\bin\Debug\TreeNovelDb.dll
+C:\Dev\TreeNovel\API\TreeNovelDb\bin\Debug\TreeNovelDb.pdb
+C:\Dev\TreeNovel\API\TreeNovelDb\obj\Debug\TreeNovelDb.sqlprojAssemblyReference.cache
+C:\Dev\TreeNovel\API\TreeNovelDb\obj\Debug\TreeNovelDb.dll
+C:\Dev\TreeNovel\API\TreeNovelDb\obj\Debug\TreeNovelDb.pdb

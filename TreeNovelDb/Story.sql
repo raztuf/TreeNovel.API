@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[Story]
+(
+	[Id] INT NOT NULL IDENTITY (1, 1) PRIMARY KEY,
+	[Title] VARCHAR(1000) NOT NULL,
+	[LastEntry] INT FOREIGN KEY REFERENCES [Chapter](Id)
+)

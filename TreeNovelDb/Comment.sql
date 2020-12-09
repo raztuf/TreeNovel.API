@@ -1,0 +1,8 @@
+﻿CREATE TABLE [dbo].[Comment]
+(
+	[Id] INT NOT NULL IDENTITY (1, 1) PRIMARY KEY,
+	[Content] VARCHAR(1000) NOT NULL,
+	[Date] DATETIME NOT NULL,
+	[UserId] INT FOREIGN KEY REFERENCES [User](Id),
+	[ChapterId] INT FOREIGN KEY REFERENCES [Chapter](Id)
+)

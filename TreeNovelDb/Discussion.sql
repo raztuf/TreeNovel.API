@@ -1,0 +1,9 @@
+﻿CREATE TABLE [dbo].[Discussion]
+(
+	[Id] INT NOT NULL IDENTITY (1, 1) PRIMARY KEY,
+	[Title] VARCHAR(1000),
+	[Date] DATETIME NOT NULL,
+	[Content] VARCHAR(MAX) NOT NULL,
+	[ReplyToId] INT FOREIGN KEY REFERENCES [Discussion](Id),
+	[UserId] INT FOREIGN KEY REFERENCES [User](Id)
+)

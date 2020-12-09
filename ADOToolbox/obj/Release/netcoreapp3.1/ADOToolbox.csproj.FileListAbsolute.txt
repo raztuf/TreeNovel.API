@@ -1,0 +1,9 @@
+C:\Dev\TreeNovel\API\ADOToolbox\bin\Release\netcoreapp3.1\ADOToolbox.deps.json
+C:\Dev\TreeNovel\API\ADOToolbox\bin\Release\netcoreapp3.1\ADOToolbox.dll
+C:\Dev\TreeNovel\API\ADOToolbox\bin\Release\netcoreapp3.1\ADOToolbox.pdb
+C:\Dev\TreeNovel\API\ADOToolbox\obj\Release\netcoreapp3.1\ADOToolbox.csprojAssemblyReference.cache
+C:\Dev\TreeNovel\API\ADOToolbox\obj\Release\netcoreapp3.1\ADOToolbox.AssemblyInfoInputs.cache
+C:\Dev\TreeNovel\API\ADOToolbox\obj\Release\netcoreapp3.1\ADOToolbox.AssemblyInfo.cs
+C:\Dev\TreeNovel\API\ADOToolbox\obj\Release\netcoreapp3.1\ADOToolbox.csproj.CoreCompileInputs.cache
+C:\Dev\TreeNovel\API\ADOToolbox\obj\Release\netcoreapp3.1\ADOToolbox.dll
+C:\Dev\TreeNovel\API\ADOToolbox\obj\Release\netcoreapp3.1\ADOToolbox.pdb
