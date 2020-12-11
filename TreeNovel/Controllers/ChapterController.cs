@@ -43,14 +43,14 @@ namespace TreeNovel.Controllers
             return Ok(_chapterService.GetOne(Id));
         }
 
-        [HttpGet("{r}/{Id}")]
+        [HttpGet("{user}/{Id}")]
         public IActionResult GetByUserId(int Id)
         {
             return Ok(_chapterService.GetByUserId(Id));
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] LocalModel.Models.Chapter c)
+        public IActionResult Post([FromBody] LocalModel.Models.ChapterToDal c)
         {
             try
             {
@@ -64,7 +64,7 @@ namespace TreeNovel.Controllers
         }
 
         [HttpPut]
-        public IActionResult Put([FromBody] LocalModel.Models.Chapter c)
+        public IActionResult Put([FromBody] LocalModel.Models.ChapterToDal c)
         {
             try
             {

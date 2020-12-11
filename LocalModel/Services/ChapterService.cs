@@ -13,10 +13,12 @@ namespace LocalModel.Services
     public class ChapterService : IChapterService
     {
         IChapterRepo<dal.Chapter> _repo;
+        IUserRepo<dal.User> _uRepo;
 
-        public ChapterService(IChapterRepo<dal.Chapter> ChapterRepo)
+        public ChapterService(IChapterRepo<dal.Chapter> ChapterRepo, IUserRepo<dal.User> UserRepo)
         {
             _repo = ChapterRepo;
+            _uRepo = UserRepo;
         }
 
         public void Delete(int Id)
@@ -26,25 +28,25 @@ namespace LocalModel.Services
 
         public IEnumerable<Chapter> GetAll()
         {
-            return _repo.GetAll().Select(x => x.toLocal());
+            return _repo.GetAll().Select(x => x.toLocal(_uRepo));
         }
 
         public IEnumerable<Chapter> GetByUserId(int Id)
         {
-            return _repo.GetByUserId(Id).Select(x => x.toLocal());
+            return _repo.GetByUserId(Id).Select(x => x.toLocal(_uRepo));
         }
 
         public Chapter GetOne(int Id)
         {
-            return _repo.GetOne(Id).toLocal();
+            return _repo.GetOne(Id).toLocal(_uRepo);
         }
 
-        public void Insert(Chapter c)
+        public void Insert(ChapterToDal c)
         {
             _repo.Insert(c.toDal());
         }
 
-        public void Update(Chapter c)
+        public void Update(ChapterToDal c)
         {
             _repo.Update(c.toDal());
         }

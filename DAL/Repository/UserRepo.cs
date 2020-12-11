@@ -24,15 +24,16 @@ namespace DAL.Repository
             cmd.AddParameter("mail", u.Mail);
             cmd.AddParameter("password", u.Password);
 
-            int Id = (int)_connection.ExecuteScalar(cmd);
+            int Id = _connection.ExecuteScalar(cmd) == DBNull.Value ? 0 : (int)_connection.ExecuteScalar(cmd);
 
             if (Id > 0)
             {
                 Command checkActive = new Command("SELECT Id FROM [User] WHERE Id = " + Id + " AND IsActive = 1");
-                if ((int)_connection.ExecuteScalar(checkActive) > 0) return true;
+
+                if (_connection.ExecuteScalar(checkActive) != DBNull.Value) return true;
                 else return false;
             }
-            else return null;
+            else return false;
         }
 
         public bool Delete(int Id)

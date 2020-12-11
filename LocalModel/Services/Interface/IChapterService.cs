@@ -11,7 +11,7 @@ namespace LocalModel.Services.Interface
         IEnumerable<Chapter> GetAll();
         IEnumerable<Chapter> GetByUserId(int Id);
         Chapter GetOne(int Id);
-        void Insert(Chapter c);
-        void Update(Chapter c);
+        void Insert(ChapterToDal c);
+        void Update(ChapterToDal c);
     }
 }

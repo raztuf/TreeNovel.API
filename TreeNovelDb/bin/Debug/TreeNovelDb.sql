@@ -15,8 +15,8 @@ SET NUMERIC_ROUNDABORT OFF;
 GO
 :setvar DatabaseName "TreeNovelDb"
 :setvar DefaultFilePrefix "TreeNovelDb"
-:setvar DefaultDataPath "C:\Users\Nicol\AppData\Local\Microsoft\VisualStudio\SSDT\TreeNovel"
-:setvar DefaultLogPath "C:\Users\Nicol\AppData\Local\Microsoft\VisualStudio\SSDT\TreeNovel"
+:setvar DefaultDataPath "C:\Users\Nicol\AppData\Local\Microsoft\VisualStudio\SSDT\TreeNovelApi"
+:setvar DefaultLogPath "C:\Users\Nicol\AppData\Local\Microsoft\VisualStudio\SSDT\TreeNovelApi"
 
 GO
 :on error exit

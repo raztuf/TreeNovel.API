@@ -1,4 +1,5 @@
-﻿using dal = DAL.Models;
+﻿using DAL.Interface;
+using dal = DAL.Models;
 using local = LocalModel.Models;
 
 namespace LocalModel.Tools
@@ -31,7 +32,7 @@ namespace LocalModel.Tools
             };
         }
 
-        public static local.Chapter toLocal(this dal.Chapter c)
+        public static local.Chapter toLocal(this dal.Chapter c, IUserRepo<dal.User> _userService)
         {
             return new local.Chapter
             {
@@ -39,13 +40,13 @@ namespace LocalModel.Tools
                 Title = c.Title,
                 Content = c.Content,
                 Date = c.Date,
-                UserId = c.UserId,
+                Writer = _userService.GetOne(c.UserId).toLocal(),
                 LastChapterId = c.LastChapterId,
                 Encyclopedia = c.Encyclopedia
             };
         }
 
-        public static dal.Chapter toDal(this local.Chapter c)
+        public static dal.Chapter toDal(this local.ChapterToDal c)
         {
             return new dal.Chapter
             {

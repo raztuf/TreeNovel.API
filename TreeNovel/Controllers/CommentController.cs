@@ -19,7 +19,7 @@ namespace TreeNovel.Controllers
             _commentService = commentService;
         }
 
-        [HttpGet("{thread}/{Id}")]
+        [HttpGet("{chapter}/{Id}")]
         public IActionResult Get(int Id)
         {
             try
