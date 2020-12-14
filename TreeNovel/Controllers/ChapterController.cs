@@ -37,18 +37,32 @@ namespace TreeNovel.Controllers
             }
         }
 
+        [HttpGet("{reply}/{Id}")]
+        public IActionResult GetReplies(int Id)
+        {
+            try
+            {
+                return Ok(_chapterService.GetReplies(Id));
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
         [HttpGet("{Id}")]
         public IActionResult Get(int Id)
         {
             return Ok(_chapterService.GetOne(Id));
         }
 
+    /*
         [HttpGet("{user}/{Id}")]
         public IActionResult GetByUserId(int Id)
         {
             return Ok(_chapterService.GetByUserId(Id));
         }
-
+    */
         [HttpPost]
         public IActionResult Post([FromBody] LocalModel.Models.ChapterToDal c)
         {

@@ -25,7 +25,14 @@ namespace DAL.Repository
 
         public IEnumerable<Chapter> GetAll()
         {
-            Command cmd = new Command("SELECT * FROM [Chapter]");
+            Command cmd = new Command("SELECT * FROM [Chapter] WHERE LastChapterId = 0");
+            return _connection.ExecuteReader<Chapter>(cmd, Converters.ChapterConvert);
+        }
+
+        public IEnumerable<Chapter> GetReplies(int Id)
+        {
+            Command cmd = new Command("SELECT * FROM [Chapter] WHERE LastChapterId = @Id");
+            cmd.AddParameter("Id", Id);
             return _connection.ExecuteReader<Chapter>(cmd, Converters.ChapterConvert);
         }
 

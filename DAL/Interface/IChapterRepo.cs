@@ -8,6 +8,7 @@ namespace DAL.Interface
     {
         bool Delete(int Id);
         IEnumerable<Chapter> GetAll();
+        IEnumerable<Chapter> GetReplies(int Id);
         IEnumerable<Chapter> GetByUserId(int Id);
         Chapter GetOne(int Id);
         void Insert(Chapter c);

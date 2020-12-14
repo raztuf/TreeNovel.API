@@ -31,6 +31,11 @@ namespace LocalModel.Services
             return _repo.GetAll().Select(x => x.toLocal(_uRepo));
         }
 
+        public IEnumerable<Chapter> GetReplies(int Id)
+        {
+            return _repo.GetReplies(Id).Select(x => x.toLocal(_uRepo));
+        }
+
         public IEnumerable<Chapter> GetByUserId(int Id)
         {
             return _repo.GetByUserId(Id).Select(x => x.toLocal(_uRepo));
