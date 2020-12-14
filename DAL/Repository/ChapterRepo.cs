@@ -18,14 +18,14 @@ namespace DAL.Repository
 
         public bool Delete(int Id)
         {
-            Command cmd = new Command("DELETE * FROM [Chapter] WHERE Id = @Id");
+            Command cmd = new Command("DELETE FROM [Chapter] WHERE Id = @Id");
             cmd.AddParameter("Id", Id);
             return _connection.ExecuteNonQuery(cmd) == 1;
         }
 
         public IEnumerable<Chapter> GetAll()
         {
-            Command cmd = new Command("SELECT * FROM [Chapter] WHERE LastChapterId = 0");
+            Command cmd = new Command("SELECT * FROM [Chapter] WHERE LastChapterId IS NULL OR LastChapterId = 0");
             return _connection.ExecuteReader<Chapter>(cmd, Converters.ChapterConvert);
         }
 

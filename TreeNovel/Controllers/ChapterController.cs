@@ -66,15 +66,8 @@ namespace TreeNovel.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] LocalModel.Models.ChapterToDal c)
         {
-            try
-            {
-                _chapterService.Insert(c);
-                return Ok();
-            }
-            catch(Exception e)
-            {
-                return BadRequest(e.Message);
-            }
+            _chapterService.Insert(c);
+            return Ok();
         }
 
         [HttpPut]

@@ -38,6 +38,19 @@ namespace TreeNovel.Controllers
             }
         }
 
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            try
+            {
+                return Ok(_userService.GetAll());
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
         [HttpGet("{Id}")]
         public IActionResult Get(int Id)
         {
