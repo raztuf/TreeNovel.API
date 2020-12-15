@@ -9,8 +9,8 @@ namespace LocalModel.Services.Interface
     {
         Comment GetOne(int Id);
         IEnumerable<Comment> GetAll(int Id);
-        void Insert(Comment c);
-        void Update(Comment c);
+        void Insert(CommentToDal c);
+        void Update(CommentToDal c);
         void Delete(int Id);
     }
 }

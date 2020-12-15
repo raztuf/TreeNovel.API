@@ -9,7 +9,7 @@ namespace LocalModel.Models
         public int Id { get; set; }
         public string Content { get; set; }
         public DateTime Date { get; set; }
-        public int UserId { get; set; }
+        public User Writer { get; set; }
         public int ChapterId { get; set; }
     }
 }

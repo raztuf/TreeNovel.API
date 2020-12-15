@@ -60,19 +60,19 @@ namespace LocalModel.Tools
             };
         }
 
-        public static local.Comment toLocal(this dal.Comment c)
+        public static local.Comment toLocal(this dal.Comment c, IUserRepo<dal.User> _userService)
         {
             return new local.Comment
             {
                 Id = c.Id,
                 Content = c.Content,
                 Date = c.Date,
-                UserId = c.UserId,
+                Writer = _userService.GetOne(c.UserId).toLocal(),
                 ChapterId = c.ChapterId
             };
         }
 
-        public static dal.Comment toDal(this local.Comment c)
+        public static dal.Comment toDal(this local.CommentToDal c)
         {
             return new dal.Comment
             {

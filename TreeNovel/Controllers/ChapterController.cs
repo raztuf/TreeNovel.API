@@ -55,14 +55,13 @@ namespace TreeNovel.Controllers
         {
             return Ok(_chapterService.GetOne(Id));
         }
-
-    /*
+        /*
         [HttpGet("{user}/{Id}")]
         public IActionResult GetByUserId(int Id)
         {
             return Ok(_chapterService.GetByUserId(Id));
         }
-    */
+        */
         [HttpPost]
         public IActionResult Post([FromBody] LocalModel.Models.ChapterToDal c)
         {

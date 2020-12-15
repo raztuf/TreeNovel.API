@@ -39,7 +39,7 @@ namespace TreeNovel.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] LocalModel.Models.Comment c)
+        public IActionResult Post([FromBody] LocalModel.Models.CommentToDal c)
         {
             try
             {
@@ -53,7 +53,7 @@ namespace TreeNovel.Controllers
         }
 
         [HttpPut]
-        public IActionResult Put([FromBody] LocalModel.Models.Comment c)
+        public IActionResult Put([FromBody] LocalModel.Models.CommentToDal c)
         {
             try
             {
