@@ -10,8 +10,8 @@ namespace LocalModel.Services.Interface
         Discussion GetOne(int Id);
         IEnumerable<Discussion> GetAllReplys(int Id);
         IEnumerable<Discussion> GetAllMains();
-        void Insert(Discussion c);
-        void Update(Discussion c);
+        void Insert(DiscussionToDal c);
+        void Update(DiscussionToDal c);
         void Delete(int Id);
     }
 }

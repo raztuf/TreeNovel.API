@@ -59,5 +59,16 @@ namespace DAL.Tools
                 UserId = (int)reader["UserId"]
             };
         }
+
+        public static Story StoryConvert(SqlDataReader reader)
+        {
+            return new Story
+            {
+                Id = (int)reader["Id"],
+                Title = reader["Title"].ToString(),
+                LastEntry = (int)reader["LastEntry"]
+                
+            };
+        }
     }
 }

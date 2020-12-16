@@ -52,7 +52,7 @@ namespace TreeNovel.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] LocalModel.Models.Discussion d)
+        public IActionResult Post([FromBody] LocalModel.Models.DiscussionToDal d)
         {
             try
             {
@@ -66,7 +66,7 @@ namespace TreeNovel.Controllers
         }
 
         [HttpPut]
-        public IActionResult Put([FromBody] LocalModel.Models.Discussion d)
+        public IActionResult Put([FromBody] LocalModel.Models.DiscussionToDal d)
         {
             try
             {

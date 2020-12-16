@@ -11,6 +11,6 @@ namespace LocalModel.Models
         public DateTime Date { get; set; }
         public string Content { get; set; }
         public int ReplyToId { get; set; }
-        public int UserId { get; set; }
+        public User Writer { get; set; }
     }
 }

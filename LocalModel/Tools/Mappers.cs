@@ -84,9 +84,22 @@ namespace LocalModel.Tools
             };
         }
 
-        public static local.Discussion toLocal(this dal.Discussion d)
+        public static local.Discussion toLocal(this dal.Discussion d, IUserRepo<dal.User> _userService)
         {
             return new local.Discussion
+            {
+                Id = d.Id,
+                Title = d.Title,
+                Content = d.Content,
+                Date = d.Date,
+                ReplyToId = d.ReplyToId,
+                Writer = _userService.GetOne(d.UserId).toLocal()
+            };
+        }
+
+        public static dal.Discussion toDal(this local.DiscussionToDal d)
+        {
+            return new dal.Discussion
             {
                 Id = d.Id,
                 Title = d.Title,
@@ -97,16 +110,23 @@ namespace LocalModel.Tools
             };
         }
 
-        public static dal.Discussion toDal(this local.Discussion d)
+        public static local.Story toLocal(this dal.Story s)
         {
-            return new dal.Discussion
+            return new local.Story
             {
-                Id = d.Id,
-                Title = d.Title,
-                Content = d.Content,
-                Date = d.Date,
-                ReplyToId = d.ReplyToId,
-                UserId = d.UserId
+                Id = s.Id,
+                Title = s.Title,
+                LastEntry = s.LastEntry
+            };
+        }
+
+        public static dal.Story toDal(this local.Story s)
+        {
+            return new dal.Story
+            {
+                Id = s.Id,
+                Title = s.Title,
+                LastEntry = s.LastEntry
             };
         }
     }

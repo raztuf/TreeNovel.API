@@ -19,14 +19,14 @@ namespace DAL.Repository
 
         public bool Delete(int Id)
         {
-            Command cmd = new Command("DELETE * FROM [Discussion] WHERE Id = @Id");
+            Command cmd = new Command("DELETE FROM [Discussion] WHERE Id = @Id");
             cmd.AddParameter("Id", Id);
             return _connection.ExecuteNonQuery(cmd) == 1;
         }
 
         public IEnumerable<Discussion> GetAllMains()
         {
-            Command cmd = new Command("SELECT * FROM [Discussion] WHERE ReplyToId = NULL");
+            Command cmd = new Command("SELECT * FROM [Discussion] WHERE ReplyToId = 0 OR ReplyToId IS NULL");
             return _connection.ExecuteReader<Discussion>(cmd, Converters.DiscussionConvert);
         }
 

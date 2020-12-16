@@ -45,12 +45,14 @@ namespace TreeNovel
             services.AddScoped<IChapterRepo<dal.Chapter>, ChapterRepo>();
             services.AddScoped<ICommentRepo<dal.Comment>, CommentRepo>();
             services.AddScoped<IDiscussionRepo<dal.Discussion>, DiscussionRepo>();
+            services.AddScoped<IStoryRepo<dal.Story>, StoryRepo>();
 
             // Services
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IChapterService, ChapterService>();
             services.AddScoped<ICommentService, CommentService>();
             services.AddScoped<IDiscussionService, DiscussionService>();
+            services.AddScoped<IStoryService, StoryService>();
 
             // JWToken
             IConfigurationSection mySecret = Configuration.GetSection("AppSettings");
