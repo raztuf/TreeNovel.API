@@ -70,5 +70,30 @@ namespace DAL.Tools
                 
             };
         }
+
+        public static Category CategoryConvert(SqlDataReader reader)
+        {
+            return new Category
+            {
+                Id = (int)reader["Id"],
+                Name = reader["Name"].ToString(),
+                Sidebar = reader["Name"].ToString()
+
+            };
+        }
+
+        public static FStory FStoryConvert(SqlDataReader reader)
+        {
+            return new FStory
+            {
+                Id = (int)reader["Id"],
+                LastId = (int)reader["LastId"],
+                StoryTitle = reader["StoryTitle"].ToString(),
+                ChapterTitle = reader["ChapterTitle"].ToString(),
+                ChapterContent = reader["ChapterContent"].ToString(),
+                ChapterEncyclopedia = reader["ChapterEncyclopedia"].ToString(),
+                LastChapterId = (int)reader["LastChapterId"]
+            };
+        }
     }
 }

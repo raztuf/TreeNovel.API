@@ -1,4 +1,5 @@
 ﻿using DAL.Interface;
+using DAL.Models;
 using dal = DAL.Models;
 using local = LocalModel.Models;
 
@@ -127,6 +128,21 @@ namespace LocalModel.Tools
                 Id = s.Id,
                 Title = s.Title,
                 LastEntry = s.LastEntry
+            };
+        }
+
+        public static local.FStory toLocal(this dal.FStory f)
+        {
+            return new local.FStory
+            {
+                Id = f.Id,
+                LastId = f.LastId,
+                StoryTitle = f.StoryTitle,
+                ChapterTitle = f.ChapterTitle,
+                ChapterContent = f.ChapterContent,
+                ChapterEncyclopedia = f.ChapterEncyclopedia,
+                LastChapterId = f.LastChapterId
+                
             };
         }
     }
