@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ using TreeNovel.Services;
 
 namespace TreeNovel.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class AuthController : ControllerBase
@@ -20,6 +22,7 @@ namespace TreeNovel.Controllers
             _tokenService = tokenService;
         }
 
+        [AllowAnonymous]
         [HttpPost("auth")]
         public IActionResult Auth([FromBody]LoginInfo model)
         {

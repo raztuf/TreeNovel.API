@@ -6,5 +6,6 @@
 	[Content] VARCHAR(MAX) NOT NULL,
 	[UserId] INT FOREIGN KEY REFERENCES [User](Id),
 	[LastChapterId] INT FOREIGN KEY REFERENCES [Chapter](Id),
-	[Encyclopedia] VARCHAR(MAX)
+	[Encyclopedia] VARCHAR(MAX),
+	[CategoryName] VARCHAR(100) FOREIGN KEY REFERENCES [Category](Name)
 )

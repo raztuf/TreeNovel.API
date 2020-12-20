@@ -10,13 +10,13 @@ using dal = DAL.Models;
 
 namespace LocalModel.Services
 {
-    public class StoryService : IStoryService
+    public class ArticleService : IArticleService
     {
-        IStoryRepo<dal.Story> _repo;
+        IArticleRepo<dal.Article> _repo;
 
-        public StoryService(IStoryRepo<dal.Story> StoryRepo)
+        public ArticleService(IArticleRepo<dal.Article> ArticleRepo)
         {
-            _repo = StoryRepo;
+            _repo = ArticleRepo;
         }
 
         public void Delete(int Id)
@@ -24,29 +24,24 @@ namespace LocalModel.Services
             _repo.Delete(Id);
         }
 
-        public IEnumerable<Story> GetAll()
+        public IEnumerable<Article> GetAll()
         {
             return _repo.GetAll().Select(x => x.toLocal());
         }
 
-        public IEnumerable<Story> GetByCategory(int Id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Story GetOne(int Id)
+        public Article GetOne(int Id)
         {
             return _repo.GetOne(Id).toLocal();
         }
 
-        public void Insert(Story s)
+        public void Insert(Article a)
         {
-            _repo.Insert(s.toDal());
+            _repo.Insert(a.toDal());
         }
 
-        public void Update(Story s)
+        public void Update(Article a)
         {
-            _repo.Update(s.toDal());
+            _repo.Update(a.toDal());
         }
     }
 }

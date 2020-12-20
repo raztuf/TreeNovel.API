@@ -13,5 +13,6 @@ namespace DAL.Models
         public int UserId { get; set; }
         public int LastChapterId { get; set; }
         public string Encyclopedia { get; set; }
+        public string CategoryName { get; set; }
     }
 }

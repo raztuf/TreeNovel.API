@@ -1,0 +1,21 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Drop
+       [dbo].[FK__Chapter__LastCha__48CFD27E] (Foreign Key)
+       [dbo].[FK__Discussio__Reply__4BAC3F29] (Foreign Key)
+     Create
+       [dbo].[Article] (Table)
+       [dbo].[Report] (Table)
+       Foreign Key: unnamed constraint on [dbo].[Chapter] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Discussion] (Foreign Key)
+
+** Supporting actions

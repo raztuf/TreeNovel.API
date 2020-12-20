@@ -50,9 +50,9 @@ namespace LocalModel.Services
             _repo.Delete(Id);
         }
 
-        public void SwitchAdmin(int Id)
+        public void SetDelete(int Id)
         {
-            _repo.SetAdmin(Id);
+            _repo.SetDelete(Id);
         }
 
         public void Update(User u)

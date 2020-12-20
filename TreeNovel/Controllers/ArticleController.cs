@@ -1,30 +1,32 @@
 ﻿using LocalModel.Services.Interface;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
 
 namespace TreeNovel.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    public class StoryController : ControllerBase
+    public class ArticleController : ControllerBase
     {
-        private IStoryService _storyService;
-        public StoryController(IStoryService storyService)
+        private IArticleService _articleService;
+        public ArticleController(IArticleService articleService)
         {
-            _storyService = storyService;
+            _articleService = articleService;
         }
 
+        [AllowAnonymous]
         [HttpGet]
         public IActionResult GetAll()
         {
             try
             {
-                return Ok(_storyService.GetAll());
+                return Ok(_articleService.GetAll());
             }
             catch (Exception e)
             {
@@ -32,25 +34,28 @@ namespace TreeNovel.Controllers
             }
         }
 
+        [AllowAnonymous]
         [HttpGet("{Id}")]
         public IActionResult Get(int Id)
         {
-            return Ok(_storyService.GetOne(Id));
+            return Ok(_articleService.GetOne(Id));
         }
 
+        [AllowAnonymous]
         [HttpPost]
-        public IActionResult Post([FromBody] LocalModel.Models.Story s)
+        public IActionResult Post([FromBody] LocalModel.Models.Article a)
         {
-            _storyService.Insert(s);
+            _articleService.Insert(a);
             return Ok();
         }
 
-        [HttpPut]
-        public IActionResult Put([FromBody] LocalModel.Models.Story s)
+        [AllowAnonymous]
+        [HttpDelete("{Id}")]
+        public IActionResult Delete(int Id)
         {
             try
             {
-                _storyService.Update(s);
+                _articleService.Delete(Id);
                 return Ok();
             }
             catch (Exception e)
@@ -59,12 +64,13 @@ namespace TreeNovel.Controllers
             }
         }
 
-        [HttpDelete("{Id}")]
-        public IActionResult Delete(int Id)
+        [AllowAnonymous]
+        [HttpPut]
+        public IActionResult Put([FromBody] LocalModel.Models.Article a)
         {
             try
             {
-                _storyService.Delete(Id);
+                _articleService.Update(a);
                 return Ok();
             }
             catch (Exception e)

@@ -52,7 +52,7 @@ namespace DAL.Repository
 
         public void Insert(Chapter c)
         {
-            string query = "INSERT INTO [Chapter] (Title, Content, Date, UserId, LastChapterId, Encyclopedia) VALUES (@title, @content, @date, @userId, @lastChapterId, @encyclopedia)";
+            string query = "INSERT INTO [Chapter] (Title, Content, Date, UserId, LastChapterId, Encyclopedia, CategoryName) VALUES (@title, @content, @date, @userId, @lastChapterId, @encyclopedia, @categoryName)";
             Command cmd = new Command(query);
             cmd.AddParameter("title", c.Title);
             cmd.AddParameter("content", c.Content);
@@ -60,12 +60,13 @@ namespace DAL.Repository
             cmd.AddParameter("userId", c.UserId);
             cmd.AddParameter("lastChapterId", c.LastChapterId);
             cmd.AddParameter("encyclopedia", c.Encyclopedia);
+            cmd.AddParameter("categoryName", c.CategoryName);
             _connection.ExecuteNonQuery(cmd);
         }
 
         public void Update(Chapter c)
         {
-            string query = "UPDATE [Chapter] SET Title = @title, Content = @content, UserId = @userId, LastChapterId = @lastChapterId, Encyclopedia = @encyclopedia" +
+            string query = "UPDATE [Chapter] SET Title = @title, Content = @content, UserId = @userId, LastChapterId = @lastChapterId, Encyclopedia = @encyclopedia, CategoryName = @categoryName" +
                 "WHERE Id = @Id";
             Command cmd = new Command(query);
             cmd.AddParameter("title", c.Title);
@@ -73,7 +74,16 @@ namespace DAL.Repository
             cmd.AddParameter("userId", c.UserId);
             cmd.AddParameter("lastChapterId", c.LastChapterId);
             cmd.AddParameter("encyclopedia", c.Encyclopedia);
+            cmd.AddParameter("categoryName", c.CategoryName);
+            cmd.AddParameter("Id", c.Id);
             _connection.ExecuteNonQuery(cmd);
+        }
+
+        public IEnumerable<Chapter> GetByCategory(string Name)
+        {
+            Command cmd = new Command("SELECT * FROM [Chapter] WHERE CategoryName = Name");
+            cmd.AddParameter("Name", Name);
+            return _connection.ExecuteReader<Chapter>(cmd, Converters.ChapterConvert);
         }
     }
 }

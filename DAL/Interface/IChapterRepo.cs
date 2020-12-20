@@ -10,6 +10,7 @@ namespace DAL.Interface
         IEnumerable<Chapter> GetAll();
         IEnumerable<Chapter> GetReplies(int Id);
         IEnumerable<Chapter> GetByUserId(int Id);
+        IEnumerable<Chapter> GetByCategory(string Name);
         Chapter GetOne(int Id);
         void Insert(Chapter c);
         void Update(Chapter c);

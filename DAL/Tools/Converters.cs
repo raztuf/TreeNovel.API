@@ -31,7 +31,8 @@ namespace DAL.Tools
                 Content = reader["Content"].ToString(),
                 UserId = (int)reader["UserId"],
                 LastChapterId = reader["LastChapterId"] == DBNull.Value ? 0 : (int)reader["LastChapterId"],
-                Encyclopedia = reader["Encyclopedia"].ToString()
+                Encyclopedia = reader["Encyclopedia"].ToString(),
+                CategoryName = reader["CategoryName"].ToString()
             };
         }
 
@@ -60,17 +61,6 @@ namespace DAL.Tools
             };
         }
 
-        public static Story StoryConvert(SqlDataReader reader)
-        {
-            return new Story
-            {
-                Id = (int)reader["Id"],
-                Title = reader["Title"].ToString(),
-                LastEntry = (int)reader["LastEntry"]
-                
-            };
-        }
-
         public static Category CategoryConvert(SqlDataReader reader)
         {
             return new Category
@@ -82,17 +72,27 @@ namespace DAL.Tools
             };
         }
 
-        public static FStory FStoryConvert(SqlDataReader reader)
+        public static Report ReportConvert(SqlDataReader reader)
         {
-            return new FStory
+            return new Report
             {
                 Id = (int)reader["Id"],
-                LastId = (int)reader["LastId"],
-                StoryTitle = reader["StoryTitle"].ToString(),
-                ChapterTitle = reader["ChapterTitle"].ToString(),
-                ChapterContent = reader["ChapterContent"].ToString(),
-                ChapterEncyclopedia = reader["ChapterEncyclopedia"].ToString(),
-                LastChapterId = (int)reader["LastChapterId"]
+                Title = reader["Title"].ToString(),
+                Content = reader["Content"].ToString(),
+                Date = (DateTime)reader["Date"],
+                Subject = reader["Subject"].ToString(),
+                UserId = (int)reader["UserId"]
+            };
+        }
+
+        public static Article ArticleConvert(SqlDataReader reader)
+        {
+            return new Article
+            {
+                Id = (int)reader["Id"],
+                Title = reader["Title"].ToString(),
+                Content = reader["Content"].ToString(),
+                Date = (DateTime)reader["Date"]
             };
         }
     }

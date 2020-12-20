@@ -65,6 +65,7 @@ namespace DAL.Repository
             cmd.AddParameter("content", c.Content);
             cmd.AddParameter("replyToId", c.ReplyToId);
             cmd.AddParameter("userId", c.UserId);
+            cmd.AddParameter("Id", c.Id);
             _connection.ExecuteNonQuery(cmd);
         }
     }

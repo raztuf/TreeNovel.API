@@ -13,6 +13,7 @@ using LocalModel.Services;
 
 namespace TreeNovel.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
 
@@ -24,6 +25,7 @@ namespace TreeNovel.Controllers
             _chapterService = chapterService;
         }
 
+        [AllowAnonymous]
         [HttpGet]
         public IActionResult GetAll()
         {
@@ -37,7 +39,8 @@ namespace TreeNovel.Controllers
             }
         }
 
-        [HttpGet("{reply}/{Id}")]
+        [AllowAnonymous]
+        [HttpGet("reply/{Id}")]
         public IActionResult GetReplies(int Id)
         {
             try
@@ -50,12 +53,14 @@ namespace TreeNovel.Controllers
             }
         }
 
+        [AllowAnonymous]
         [HttpGet("{Id}")]
         public IActionResult Get(int Id)
         {
             return Ok(_chapterService.GetOne(Id));
         }
 
+        [AllowAnonymous]
         [HttpPost]
         public IActionResult Post([FromBody] LocalModel.Models.ChapterToDal c)
         {
@@ -63,6 +68,7 @@ namespace TreeNovel.Controllers
             return Ok();
         }
 
+        [AllowAnonymous]
         [HttpPut]
         public IActionResult Put([FromBody] LocalModel.Models.ChapterToDal c)
         {
@@ -77,6 +83,7 @@ namespace TreeNovel.Controllers
             }
         }
 
+        [AllowAnonymous]
         [HttpDelete("{Id}")]
         public IActionResult Delete(int Id)
         {
@@ -86,6 +93,20 @@ namespace TreeNovel.Controllers
                 return Ok();
             }
             catch(Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [AllowAnonymous]
+        [HttpGet("genre/{Name}")]
+        public IActionResult GetByCategory (string Name)
+        {
+            try
+            {
+                return Ok(_chapterService.GetByCategory(Name));
+            }
+            catch (Exception e)
             {
                 return BadRequest(e.Message);
             }

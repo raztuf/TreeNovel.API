@@ -12,7 +12,7 @@ namespace LocalModel.Services.Interface
         User GetOne(int Id);
         void Register(User u);
         void SwitchActivate(int Id);
-        void SwitchAdmin(int Id);
+        void SetDelete(int Id);
         User GetByMail(string Mail);
         void Update(User u);
     }

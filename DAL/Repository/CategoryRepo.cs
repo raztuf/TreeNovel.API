@@ -10,7 +10,7 @@ using System.Text;
 
 namespace DAL.Repository
 {
-    class CategoryRepo : BaseRepository, ICategoryRepo<Category>
+    public class CategoryRepo : BaseRepository, ICategoryRepo<Category>
     {
         public CategoryRepo(IConfiguration config) : base(config)
         {
@@ -52,6 +52,7 @@ namespace DAL.Repository
             Command cmd = new Command(query);
             cmd.AddParameter("name", c.Name);
             cmd.AddParameter("sidebar", c.Sidebar);
+            cmd.AddParameter("Id", c.Id);
             _connection.ExecuteNonQuery(cmd);
         }
     }

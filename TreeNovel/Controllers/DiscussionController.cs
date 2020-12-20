@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace TreeNovel.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class DiscussionController : ControllerBase
@@ -19,6 +20,7 @@ namespace TreeNovel.Controllers
             _discussionService = discussionService;
         }
 
+        [AllowAnonymous]
         [HttpGet]
         public IActionResult GetAllMains()
         {
@@ -32,6 +34,7 @@ namespace TreeNovel.Controllers
             }
         }
 
+        [AllowAnonymous]
         [HttpGet("{thread}/{Id}")]
         public IActionResult GetAllReplys(int Id)
         {
@@ -45,12 +48,14 @@ namespace TreeNovel.Controllers
             }
         }
 
+        [AllowAnonymous]
         [HttpGet("{Id}")]
         public IActionResult GetOne(int Id)
         {
             return Ok(_discussionService.GetOne(Id));
         }
 
+        [AllowAnonymous]
         [HttpPost]
         public IActionResult Post([FromBody] LocalModel.Models.DiscussionToDal d)
         {
@@ -65,6 +70,7 @@ namespace TreeNovel.Controllers
             }
         }
 
+        [AllowAnonymous]
         [HttpPut]
         public IActionResult Put([FromBody] LocalModel.Models.DiscussionToDal d)
         {
@@ -79,6 +85,7 @@ namespace TreeNovel.Controllers
             }
         }
 
+        [AllowAnonymous]
         [HttpDelete("{Id}")]
         public IActionResult Delete(int Id)
         {

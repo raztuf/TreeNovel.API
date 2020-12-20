@@ -13,6 +13,7 @@ using LocalModel.Services;
 
 namespace TreeNovel.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class UserController : ControllerBase
@@ -24,6 +25,7 @@ namespace TreeNovel.Controllers
             _userService = userService;
         }
 
+        [AllowAnonymous]
         [HttpPost("{register}")]
         public IActionResult Register([FromBody]NewUserInfo newUser)
         {
@@ -38,6 +40,7 @@ namespace TreeNovel.Controllers
             }
         }
 
+        [Authorize("Admin")]
         [HttpGet]
         public IActionResult GetAll()
         {
@@ -51,6 +54,7 @@ namespace TreeNovel.Controllers
             }
         }
 
+        [Authorize("User")]
         [HttpGet("{Id}")]
         public IActionResult Get(int Id)
         {
@@ -64,6 +68,7 @@ namespace TreeNovel.Controllers
             }
         }
 
+        [Authorize("Admin")]
         [HttpDelete("{Id}")]
         public IActionResult Delete(int Id)
         {
@@ -78,12 +83,13 @@ namespace TreeNovel.Controllers
             }
         }
 
+        [Authorize("Admin")]
         [HttpPut("{Id}")]
-        public IActionResult SwitchAdmin(int Id)
+        public IActionResult SetDelete(int Id)
         {
             try
             {
-                _userService.SwitchAdmin(Id);
+                _userService.SetDelete(Id);
                 return Ok();
             }
             catch (Exception e)
@@ -92,6 +98,7 @@ namespace TreeNovel.Controllers
             }
         }
 
+        [Authorize("User")]
         [HttpPut]
         public IActionResult Update(User u)
         {

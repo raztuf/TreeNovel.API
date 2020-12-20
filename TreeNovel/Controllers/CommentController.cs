@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace TreeNovel.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class CommentController : ControllerBase
@@ -19,6 +20,7 @@ namespace TreeNovel.Controllers
             _commentService = commentService;
         }
 
+        [AllowAnonymous]
         [HttpGet("{chapter}/{Id}")]
         public IActionResult Get(int Id)
         {
@@ -32,12 +34,14 @@ namespace TreeNovel.Controllers
             }
         }
 
+        [AllowAnonymous]
         [HttpGet("{Id}")]
         public IActionResult GetOne(int Id)
         {
             return Ok(_commentService.GetOne(Id));
         }
 
+        [AllowAnonymous]
         [HttpPost]
         public IActionResult Post([FromBody] LocalModel.Models.CommentToDal c)
         {
@@ -52,6 +56,7 @@ namespace TreeNovel.Controllers
             }
         }
 
+        [AllowAnonymous]
         [HttpPut]
         public IActionResult Put([FromBody] LocalModel.Models.CommentToDal c)
         {
@@ -66,6 +71,7 @@ namespace TreeNovel.Controllers
             }
         }
 
+        [AllowAnonymous]
         [HttpDelete("{Id}")]
         public IActionResult Delete(int Id)
         {

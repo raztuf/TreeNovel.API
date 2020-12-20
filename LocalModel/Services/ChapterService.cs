@@ -55,5 +55,10 @@ namespace LocalModel.Services
         {
             _repo.Update(c.toDal());
         }
+
+        public IEnumerable<Chapter> GetByCategory(string Name)
+        {
+            return _repo.GetAll().Select(x => x.toLocal(_uRepo));
+        }
     }
 }

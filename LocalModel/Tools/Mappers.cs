@@ -43,7 +43,8 @@ namespace LocalModel.Tools
                 Date = c.Date,
                 Writer = _userService.GetOne(c.UserId).toLocal(),
                 LastChapterId = c.LastChapterId,
-                Encyclopedia = c.Encyclopedia
+                Encyclopedia = c.Encyclopedia,
+                CategoryName = c.CategoryName
             };
         }
 
@@ -57,7 +58,8 @@ namespace LocalModel.Tools
                 Date = c.Date,
                 UserId = c.UserId,
                 LastChapterId = c.LastChapterId,
-                Encyclopedia = c.Encyclopedia
+                Encyclopedia = c.Encyclopedia,
+                CategoryName = c.CategoryName
             };
         }
 
@@ -111,39 +113,72 @@ namespace LocalModel.Tools
             };
         }
 
-        public static local.Story toLocal(this dal.Story s)
+        public static local.Article toLocal(this dal.Article a)
         {
-            return new local.Story
+            return new local.Article
             {
-                Id = s.Id,
-                Title = s.Title,
-                LastEntry = s.LastEntry
+                Id = a.Id,
+                Title = a.Title,
+                Content = a.Content,
+                Date = a.Date
             };
         }
 
-        public static dal.Story toDal(this local.Story s)
+        public static dal.Article toDal(this local.Article a)
         {
-            return new dal.Story
+            return new dal.Article
             {
-                Id = s.Id,
-                Title = s.Title,
-                LastEntry = s.LastEntry
+                Id = a.Id,
+                Title = a.Title,
+                Content = a.Content,
+                Date = a.Date
             };
         }
 
-        public static local.FStory toLocal(this dal.FStory f)
+        public static local.Report toLocal(this dal.Report r)
         {
-            return new local.FStory
+            return new local.Report
             {
-                Id = f.Id,
-                LastId = f.LastId,
-                StoryTitle = f.StoryTitle,
-                ChapterTitle = f.ChapterTitle,
-                ChapterContent = f.ChapterContent,
-                ChapterEncyclopedia = f.ChapterEncyclopedia,
-                LastChapterId = f.LastChapterId
-                
+                Id = r.Id,
+                Title = r.Title,
+                Content = r.Content,
+                Date = r.Date,
+                Subject = r.Subject,
+                UserId = r.UserId
             };
         }
+
+        public static dal.Report toDal(this local.Report r)
+        {
+            return new dal.Report
+            {
+                Id = r.Id,
+                Title = r.Title,
+                Content = r.Content,
+                Date = r.Date,
+                Subject = r.Subject,
+                UserId = r.UserId
+            };
+        }
+        public static local.Category toLocal(this dal.Category c)
+        {
+            return new local.Category
+            {
+                Id = c.Id,
+                Name = c.Name,
+                Sidebar = c.Sidebar
+            };
+        }
+
+        public static dal.Category toDal(this local.Category c)
+        {
+            return new dal.Category
+            {
+                Id = c.Id,
+                Name = c.Name,
+                Sidebar = c.Sidebar
+            };
+        }
+
     }
 }

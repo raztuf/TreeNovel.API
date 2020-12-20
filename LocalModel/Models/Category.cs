@@ -4,11 +4,10 @@ using System.Text;
 
 namespace LocalModel.Models
 {
-    public class Story
+    public class Category
     {
-
         public int Id { get; set; }
-        public string Title { get; set; }
-        public int LastEntry { get; set; }
+        public string Name { get; set; }
+        public string Sidebar { get; set; }
     }
 }

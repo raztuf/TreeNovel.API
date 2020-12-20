@@ -38,7 +38,7 @@ namespace DAL.Repository
 
         public bool Delete(int Id)
         {
-            Command cmd = new Command("DELETE * FROM [User] WHERE Id = @Id");
+            Command cmd = new Command("DELETE FROM [User] WHERE Id = @id");
             cmd.AddParameter("Id", Id);
             return _connection.ExecuteNonQuery(cmd) == 1;
         }
@@ -73,11 +73,10 @@ namespace DAL.Repository
             _connection.ExecuteNonQuery(cmd);
         }
 
-        public void SetAdmin(int Id)
+        public void SetDelete(int Id)
         {
-            string Query = "UPDATE [User] SET IsAdmin = @isAdmin WHERE Id = @id";
+            string Query = "UPDATE [User] SET Username = '[deleted]' WHERE Id = @id";
             Command cmd = new Command(Query);
-            cmd.AddParameter("isAdmin", GetOne(Id).IsAdmin ? 0 : 1);
             cmd.AddParameter("Id", Id);
             _connection.ExecuteNonQuery(cmd);
         }
@@ -91,7 +90,6 @@ namespace DAL.Repository
             cmd.AddParameter("password", u.Password);
             cmd.AddParameter("userame", u.Username);
             cmd.AddParameter("Id", u.Id);
-
             _connection.ExecuteNonQuery(cmd);
         }
     }

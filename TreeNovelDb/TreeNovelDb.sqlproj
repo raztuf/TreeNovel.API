@@ -62,8 +62,6 @@
     <Build Include="Chapter.sql" />
     <Build Include="Comment.sql" />
     <Build Include="Discussion.sql" />
-    <Build Include="Story.sql" />
     <Build Include="Category.sql" />
-    <Build Include="Tag.sql" />
   </ItemGroup>
 </Project>
